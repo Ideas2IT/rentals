@@ -48,7 +48,7 @@ module Synthesis
           source = "/#{dir}/#{source}" unless source[0] == ?/
           asset_id = rails_asset_id(source)
           source << '?' + asset_id if defined?(RAILS_ROOT) and add_asset_id and not asset_id.blank?
-          source = "#{ActionController::Base.asset_host}#{@controller.request.relative_url_root}#{source}"
+          source = "#{ActionController::Base.asset_host}#{ActionController::Base.relative_url_root}#{source}"
         end
         source
       end
