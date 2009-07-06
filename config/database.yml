@@ -2,7 +2,7 @@ development:
   #Mysql Settings
   adapter: mysql
   encoding: utf8
-  database: 91r_development
+  database: rentals_development
   username: root
   password:
   pool: 5
@@ -11,7 +11,7 @@ test:
   # Mysql Settings
   adapter: mysql
   encoding: utf8
-  database: 91r_test
+  database: rentals_test
   username: root
   password:
   pool: 5
@@ -20,7 +20,7 @@ staging:
   # Mysql Settings
   adapter: mysql
   encoding: utf8
-  database: 91r_staging
+  database: rentals_staging
   username: root
   password:
   pool: 5
@@ -29,7 +29,7 @@ production:
   # Mysql Settings
   adapter: mysql
   encoding: utf8
-  database: 91r_production
+  database: rentals_production
   username: root
   password:
   pool: 5

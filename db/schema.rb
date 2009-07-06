@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090611063042) do
+ActiveRecord::Schema.define(:version => 20090706101126) do
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -30,6 +30,60 @@ ActiveRecord::Schema.define(:version => 20090611063042) do
     t.integer  "user_id"
     t.string   "reset_code"
     t.datetime "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title",                                                                                      :null => false
+    t.string   "detail",                                                                                     :null => false
+    t.string   "door_no"
+    t.string   "street"
+    t.string   "locality"
+    t.string   "city"
+    t.string   "state"
+    t.string   "pincode"
+    t.integer  "owner_id",                                                                                   :null => false
+    t.enum     "rent_type",                 :limit => [:rent, :lease],                    :default => :rent
+    t.text     "lease_terms"
+    t.text     "near_by_amenitites"
+    t.text     "suitable_for"
+    t.integer  "dealer_commision"
+    t.boolean  "lift"
+    t.boolean  "centralized_air_condition"
+    t.boolean  "power_backup"
+    t.boolean  "vaastu_compliant"
+    t.integer  "no_of_bedrooms"
+    t.integer  "no_of_bathrooms"
+    t.integer  "no_of_floors"
+    t.integer  "floor_no"
+    t.integer  "no_of_parkings"
+    t.integer  "no_of_covered_parkings"
+    t.boolean  "commom_parking_available"
+    t.integer  "area"
+    t.integer  "rent"
+    t.integer  "security_deposit"
+    t.integer  "monthly_maintenance"
+    t.boolean  "furnished"
+    t.boolean  "security_system"
+    t.enum     "condition",                 :limit => [:new, :less_than_5, :more_than_5]
+    t.string   "facing_direction"
+    t.string   "contact_person"
+    t.string   "phone_number1"
+    t.string   "phone_number2"
+    t.string   "email_id"
+    t.enum     "preferred_contact_mode",    :limit => [:sms, :phone, :email]
+    t.boolean  "gym"
+    t.boolean  "servant_quarters"
+    t.boolean  "pets_ok"
+    t.boolean  "smoking_ok"
+    t.boolean  "bachelors_ok"
+    t.boolean  "security_person"
+    t.boolean  "only_vegetarian"
+    t.datetime "posted_date"
+    t.datetime "available_from"
+    t.datetime "expiration_date"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
